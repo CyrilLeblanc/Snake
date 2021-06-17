@@ -7,7 +7,7 @@ var grid = document.getElementById('grid');
 var grid_height = 640;
 var grid_width = 640;
 
-var size = 10;
+var size = 16;
 
 // on met en place la grid
 var grid_content  = "";

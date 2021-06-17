@@ -7,35 +7,77 @@ class Part{
         this.x = x;
         this.y = y;
     }
+}
+
+class Head{
+    constructor(x, y)
+    {
+        var position = document.getElementById(x + "x" + y);
+        this.x = x;
+        this.y = y;
+        position.style.backgroundColor = "red";
+        position.innerText = "head";
+    }
 
     move(x, y)
-    // permet de bouger une parti du corp un certain endroit
     {
-        this.age++;
-        if (this.age <= 0)
-        {
-            this.alive = false;
-            document.getElementById(this.x + "x" + this.y).style.backgroundColor = "black";
-            delete this;
-        } else {
-            document.getElementById(this.x + "x" + this.y).style.backgroundColor = "black";
-            document.getElementById(x + "x" + y).style.backgroundColor = "blue";
-            this.x = x;
-            this.y = y;
-        }
+        this.x = x;
+        this.y = y;
+        var position = document.getElementById(x + "x" + y);
+        position.style.backgroundColor = "red";
+        position.innerText = "head";
+    }
+}
+
+class Tail{
+    constructor(x, y)
+    {
+        var position = document.getElementById(x + "x" + y);
+        this.x = x;
+        this.y = y;
+        position.style.backgroundColor = "green";
+        position.innerText = "tail";
+    }
+
+    move(x, y)
+    {
+        var lastPosition = document.getElementById(this.x + "x" + this.y);
+        lastPosition.style.backgroundColor = "none";
+        lastPosition.innerText = "";
+
+        var newPosition = document.getElementById(x + "x" + y);
+        newPosition.style.backgroundColor = "green";
+        newPosition.innerText = "tail";
+
+        this.x = x;
+        this.y = y;
     }
 }
 
 class Snake{
-    constructor()
+    constructor(x, y)
     {
-        this.body = Array(new Part(0, 5, 5))
+        this.x = x;
+        this.y = y;
+        this.body = Array(
+            new Head(x, y), 
+            new Part(0, x+1, y), 
+            new Tail(x+2, y)
+        );
     }
 
     up()
     {
+        this.x--;
+        var head = this.body[0];
+        var tail = this.body[this.body.length-1];
+
+        head.move(this.x-1, this.y);
         this.body.forEach(element => {
-            element.move(element.x--, element.y);
+            if (element){
+                
+            }
         });
+        tail.move(tail.x-1, tail.y)
     }
 }
