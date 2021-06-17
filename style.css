@@ -1,0 +1,63 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(39, 39, 39);
+    color: white;
+}
+
+h1{
+    text-align: center;
+}
+
+.game{
+    width: min-content;
+    height: min-content;
+    margin: 0 auto 0 auto;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.game .header{
+    border-bottom: 1px solid grey;
+    display: flex;
+    padding: 0.5em 0 0.5em 0;
+}
+
+.game .header .score{
+    margin: auto;
+}
+
+.game .header .time{
+    margin: auto;
+}
+
+.game .grid{
+    background-color: rgb(0, 182, 0);
+    padding: 0;
+}
+
+.game .grid .row{
+    display: flex;
+}
+
+.game .grid .cell{
+    border: solid 0.1px grey;
+}
+
+button{
+    border: solid 1px green;
+    border-radius: 2px;
+    background: rgb(80, 199, 0);
+    color: rgb(0, 68, 0);
+    font-size: 20px;
+
+    padding: 0 0.5em 0 0.5em;
+    margin: 0.5em auto 0.5em 1em;
+}
+
+button:hover{
+    background: rgb(0, 68, 0);
+    color: rgb(80, 199, 0);
+    cursor: pointer;
+}
