@@ -18,6 +18,10 @@
         this.x = x;
         this.y = y;
         var position = document.getElementById(x + "x" + y);
-        position.style.backgroundColor = "red";
+        if (position != null && inGame)
+        {
+            position.style.backgroundColor = "red";
+        }
+        
     }
 }

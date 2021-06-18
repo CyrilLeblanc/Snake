@@ -1,4 +1,6 @@
 
+function refresh()
+{
 /**
  *  Mise en place de la GRID
  */
@@ -11,10 +13,10 @@ var size = 16;
 
 // on met en place la grid
 var grid_content  = "";
-for (let i = 1 ; i < size ; i++)
+for (let i = 1 ; i <= size ; i++)
 {
     grid_content += '<div class="row">';
-    for (let j = 1 ; j < size ; j++)
+    for (let j = 1 ; j <= size ; j++)
     {
         coord = i + "x" + j;
         grid_content += '<div class="cell" id="' + coord + '"></div>';
@@ -30,5 +32,6 @@ cells.forEach(element => {
     element.style.height = grid_height / 15 + "px";
     element.style.width = grid_width / 15 + "px";
 }); 
+}
 
-
+refresh();
