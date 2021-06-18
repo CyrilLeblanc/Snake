@@ -30,3 +30,5 @@ cells.forEach(element => {
     element.style.height = grid_height / 15 + "px";
     element.style.width = grid_width / 15 + "px";
 }); 
+
+
