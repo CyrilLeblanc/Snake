@@ -1,36 +1,40 @@
 /**
  * EventListener Start Button
  */
-onGame = false;
+var inGame = false;
 var snake;
+var lastKey = 'z';
+
 
 document.getElementById("start").addEventListener("click", function(){
     snake = new Snake(8, 8);
-    onGame = true;
+    inGame = true;
 });
 
 
 document.addEventListener('keydown', (event) => {   
-    if (onGame == true)
+    if (inGame == true)
     {
         if(event.key == 'z' || event.key == 'ArrowUp')
         {
             snake.up();
+            lastKey = event.key;
         }
         if (event.key == 's' || event.key == 'ArrowDown')
         {
             snake.down();
+            lastKey = event.key;
         }
         if (event.key == 'q' || event.key == 'ArrowLeft')
         {
             snake.left();
+            lastKey = event.key;
         }
         if (event.key == 'd' || event.key == 'ArrowRight')
         {
             snake.right();
+            lastKey = event.key;
         }
+        
     }
-    console.log(event.key);
-    
-    
 })
