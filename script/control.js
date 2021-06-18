@@ -47,7 +47,7 @@ document.getElementById("start").addEventListener("click", function(){
     setInterval(() => {
         if (gameOver == true)
         {
-            document.getElementById('game').innerHTML = "PERDU";
+            
         } else {
             elapsedTime += 100;
             document.getElementById("time").innerText = elapsedTime/1000 + "s";
@@ -59,7 +59,7 @@ document.getElementById("start").addEventListener("click", function(){
         {
             moveSnake(lastKey);
         }
-    }, 200);
+    }, 100);
 });
 
 

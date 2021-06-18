@@ -77,10 +77,21 @@ class Snake{
                 this.body.push(new Part(this.body[sizeOfBody].age+1, this.body[sizeOfBody].x, this.body[sizeOfBody].y));
             }
         });
-
+        var cherryOverPart;
         if (this.cherrys.length < 1)
         {
-            this.spawn_cherry();
+            do{
+                this.cherrys.pop();
+                this.spawn_cherry();
+                cherryOverPart = false;
+                this.body.forEach(element => {
+                    if (element.x == this.cherrys[0].x && element.y == this.cherrys[0].y)
+                    {
+                        cherryOverPart = true;
+                    }
+                });
+            } while (cherryOverPart);
+            
         }
 
 
@@ -115,10 +126,9 @@ class Snake{
 
     gameOver()
     {
-        console.log("PERDU");
         inGame = false;
         gameOver = true;
-        document.getElementById('grid').innerHTML = "<h1>PERDU</h1>";
+        document.getElementById('grid').innerHTML += "<h1>Game Over</h1><button onclick='location.reload(true)'>Restart</button>";
         document.getElementById('start').removeAttribute('disabled');
         
     }
